@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <h1>Encrypt!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="document" multiple>
+        <input type="text" name="text-to-encrypt" placeholder="Text To be Encrypted"><br>
+        <br>
+        Do You want to mail the encrypted files?
+        <input type="radio" name="mail" value="True">Yes
+        <input type="radio" name="mail" value="False">No<br><br>
+        <input type="email" name="email" placeholder="Sender's Email"><br><br>
+        <input type="password" name="password" placeholder="password"><br><br>
+        <input type="email" name="r_email" placeholder="Reciever's Email"><br><br>
+        <button type="submit" name="submit">Submit</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decrypt</title>
+</head>
+<body>
+    <h1>Decrypt!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="decrypt-image">
+        <button type="submit">Upload File</button>
+    </form>
+    <h3>{{ decrypted_value }}</h3>
+</body>
+</html>
